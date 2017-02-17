@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  speedtest:
+    build:
+      context: speedtest
+      args:
+        # specify your API key of mackerel
+        - APIKEY=<YOUR API KEY>
+        # specify the name of service to post service-metrics
+        - SERVICE_NAME=<CHANNEL ID>
+        # specify server ID to pass speedtest_cli
+        - SERVER_ID=<SERVER ID>
+        # specify time to exec speedtest like crontab
+        # e.g. "0 * * *" (crond style)
+        - CRON_TIME_DESCRIPTOR=0,30 * * * *
+    container_name: speedtest_mackerel
