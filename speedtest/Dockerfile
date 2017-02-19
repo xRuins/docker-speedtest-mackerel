@@ -16,6 +16,6 @@ RUN set -x \
     	&& apk add dcron curl \
 	&& easy_install speedtest-cli \
     	&& echo "${CRON_TIME_DESCRIPTOR} ${SCRIPT_DESTINATION} ${APIKEY} ${SERVICE_NAME} ${SERVER_ID}" \
-	   > /etc/crontabs/post-speedtest-mackerel \
-        && chmod 0644 /etc/crontabs/post-speedtest-mackerel
+	   >> /etc/crontabs/root \
+        && chmod 0644 /etc/crontabs/root
 CMD ["/docker-entrypoint.sh"]
