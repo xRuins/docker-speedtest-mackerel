@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/local/bin/post-speedtest-mackerel.sh
+crond
 tail -f /dev/null
